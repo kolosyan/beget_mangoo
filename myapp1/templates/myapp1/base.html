@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="/static/images/mangoo.jpg" type="image/x-icon">
+    <style>
+        body {
+            background-image: url("/static/images/background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Главная</a> |
+        <a href="{% url 'about' %}">О нас</a> |
+        <a href="{% url 'contact' %}">Контакты</a>
+    </nav>
+    <h1>{% block heading %}{% endblock %}</h1>
+    {% block content %}{% endblock %}
+</body>
+</html>
