@@ -1,0 +1,19 @@
+/* Изменение стиля заголовка h1 */
+h1 {
+  color: blue;
+  font-size: 24px;
+}
+
+/* Изменение стиля кнопки с классом button */
+.button, button {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+
+}
+

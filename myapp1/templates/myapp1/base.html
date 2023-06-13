@@ -1,8 +1,14 @@
+{#{% extends 'base.html' %}#}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>{% block title %}{% endblock %}</title>
     <link rel="icon" href="/static/images/mangoo.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static '/myapp1/css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <style>
         body {
             background-image: url("/static/images/background.jpg");
@@ -13,9 +19,10 @@
 </head>
 <body>
     <nav>
-        <a href="{% url 'home' %}">Главная</a> |
-        <a href="{% url 'about' %}">О нас</a> |
-        <a href="{% url 'contact' %}">Контакты</a>
+        <a class="button" href="{% url 'home' %}">Главная</a>
+        <a class="button" href="{% url 'about' %}">О нас</a>
+        <a class="button" href="{% url 'contact' %}">Контакты</a>
+        <a class="button" >корзина</a>
     </nav>
     <h1>{% block heading %}{% endblock %}</h1>
     {% block content %}{% endblock %}
