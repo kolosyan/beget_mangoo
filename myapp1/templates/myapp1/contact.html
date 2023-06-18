@@ -2,6 +2,31 @@
 
 {% block title %}Контакты{% endblock %}
 {% block heading %}Контакты{% endblock %}
-{% block content %}
-<p>Здесь информация о том, как с нами просто так связаться.</p>
+
+{#<head>#}
+{#   <link rel="stylesheet" type="text/css" href="{% static 'myapp1/css/styles.css' %}">#}
+{##}
+{#</head>#}
+    {% block content %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mont:wght@100&display=swap" rel="stylesheet">
+
+
+{# {% endblock %}#}
+
+<p>Здесь информация о том, как с нами просто связаться.</p>
+{#    <form>#}
+{#    {% csrf_token %}#}
+{#    <input type="text" id="my-input" name="my-input">#}
+{#    <input type="submit" value="Submit">#}
+{#     </form>#}
+
+    <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Отправить</button>
+    </form>
+
+
 {% endblock %}

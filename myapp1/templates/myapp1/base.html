@@ -1,23 +1,33 @@
-{#{% extends 'base.html' %}#}
 {% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="icon" href="/static/images/mangoo.jpg" type="image/x-icon">
+
+    <link rel="icon" href="{% static 'myapp1/images/mangoo.jpg' %}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="{% static '/myapp1/css/styles.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-image: url("/static/images/background.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Mont:wght@100&display=swap" rel="stylesheet">
+
 </head>
-<body>
+<body onscroll="changeBackground()">
+
+<script>
+    let lastScrollTop = 0
+function changeBackground() {
+  let st = window.pageYOffset || document.documentElement.scrollTop;
+  if (st > lastScrollTop){
+      // Прокрутка вниз
+      document.body.style.backgroundImage = "url('/static/myapp1/images/mangoo_logo_wo-tagline-5.jpg')";
+  } else {
+      // Прокрутка вверх
+      document.body.style.backgroundImage = "url('/static/myapp1/images/background.jpg')";
+  }
+
+  lastScrollTop = st <= 0 ? 0 : st;
+}
+</script>
     <nav>
         <a class="button" href="{% url 'home' %}">Главная</a>
         <a class="button" href="{% url 'about' %}">О нас</a>
@@ -25,6 +35,15 @@
         <a class="button" >корзина</a>
     </nav>
     <h1>{% block heading %}{% endblock %}</h1>
-    {% block content %}{% endblock %}
+    {% block content %}
+        <form action="{% url '/myapp1/home.html' %}" method="post">
+    {% csrf_token %}
+
+    {% endblock %}
+
+    <div id="background-container">
+{#  <img id="background-image" src="{% static 'myapp1/images/image1.jpg' %}" alt="Background Image">#}
+    </div>
+
 </body>
 </html>
