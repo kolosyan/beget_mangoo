@@ -1,6 +1,6 @@
-/myapp1/static/myapp1/images/image1.jpg
-/myapp1/static/myapp1/images/image2.jpg
-/myapp1/static/myapp1/images/image3.jpg
-/static/myapp1/js/script.js
-/myapp1/__pycache__/
-__pycache__/
+#/myapp1/static/myapp1/images/image1.jpg
+#/myapp1/static/myapp1/images/image2.jpg
+#/myapp1/static/myapp1/images/image3.jpg
+#/static/myapp1/js/script.js
+#/myapp1/__pycache__/
+#__pycache__/
