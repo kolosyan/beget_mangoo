@@ -28,5 +28,14 @@
     <button type="submit">Отправить</button>
     </form>
 
+        <form method="GET" action="{% url 'contact' %}">
+    <input type="submit" value="Показать сотрудников">
+</form>
+{#        {% for employer in employers %}#}
+{#    <p>Имя: {{ employer.name }}</p>#}
+{#    <p>Номер пропуска: {{ employer.pass_number }}</p>#}
+{#    <hr>#}
+{#{% endfor %}#}
+
 
 {% endblock %}

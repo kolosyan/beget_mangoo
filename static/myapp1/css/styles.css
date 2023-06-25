@@ -48,3 +48,12 @@ h1 {
     background-color: #ffec;
   background-origin: border-box/* Установите рамку */
 }
+
+.pass_num{
+    width: 100px;    /* Установите ширину поля */
+    height: 25px;    /* Установите высоту поля */
+    border: 3px solid black;
+    /*border-bottom-color: aqua;*/
+    background-color: #ffec;
+  background-origin: border-box/* Установите рамку */
+}

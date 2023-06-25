@@ -1,0 +1,15 @@
+{% extends 'myapp1/base.html' %}
+
+{% block title %}Сотрудники{% endblock %}
+{% block heading %}Сотрудники{% endblock %}
+
+{% block content %}
+
+<!-- Выводим каждого сотрудника -->
+{% for employer in employers %}
+    <p>Имя: {{ employer.name }}</p>
+    <p>Номер паспорта: {{ employer.pass_number }}</p>
+    <hr>
+{% endfor %}
+
+{% endblock %}
